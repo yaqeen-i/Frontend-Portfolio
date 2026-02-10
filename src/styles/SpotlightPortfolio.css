@@ -1,0 +1,217 @@
+/* SpotlightPortfolio.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --sp-bg: #000212;
+  --sp-card-bg: rgba(255, 255, 255, 0.03);
+  --sp-border: rgba(255, 255, 255, 0.1);
+  --sp-text-primary: #f2f2f2;
+  --sp-text-secondary: #8a8f98;
+  --sp-accent: #5e6ad2;
+  --sp-glow-color: rgba(120, 119, 198, 0.3);
+}
+
+.sp-container {
+  background-color: var(--sp-bg);
+  color: var(--sp-text-primary);
+  font-family: 'Inter', sans-serif;
+  
+  /* SCROLL FIX: Force this container to take full height and scroll internally */
+  height: 100vh; 
+  width: 100vw;
+  overflow-y: auto; 
+  overflow-x: hidden;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* --- AMBIENT BACKGROUND GLOW --- */
+.sp-ambient-light {
+  position: fixed;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(68,50,200,0.2) 0%, rgba(0,0,0,0) 70%);
+  z-index: 0;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+/* --- LAYOUT --- */
+.sp-main {
+  max-width: 1000px;
+  width: 100%;
+  padding: 6rem 2rem;
+  z-index: 1;
+}
+
+/* --- HEADER --- */
+.sp-header { text-align: center; margin-bottom: 6rem; }
+
+.sp-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--sp-border);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  color: var(--sp-text-secondary);
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.sp-title {
+  font-size: 4rem;
+  font-weight: 600;
+  background: linear-gradient(to bottom, #fff 40%, #888);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1px;
+}
+
+.sp-subtitle {
+  font-size: 1.2rem;
+  color: var(--sp-text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* --- CARDS GRID --- */
+.sp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+/* --- THE SPOTLIGHT CARD --- */
+.sp-card {
+  background-color: var(--sp-card-bg);
+  border: 1px solid var(--sp-border);
+  border-radius: 12px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden; 
+  transition: transform 0.2s;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.sp-card:hover {
+  transform: translateY(-2px);
+}
+
+/* The glowing blob */
+.sp-card::before {
+  content: "";
+  position: absolute;
+  top: var(--y, 0);
+  left: var(--x, 0);
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--sp-glow-color) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.sp-card:hover::before { opacity: 1; }
+
+.sp-card-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sp-card-icon {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.05);
+  border-radius: 8px;
+  border: 1px solid var(--sp-border);
+}
+
+.sp-card h3 { font-size: 1.2rem; margin-bottom: 0.8rem; font-weight: 500; color: white; }
+.sp-card p { font-size: 0.95rem; color: var(--sp-text-secondary); line-height: 1.5; margin-bottom: 2rem; }
+
+.sp-card-footer {
+  margin-top: auto;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.sp-btn-link {
+  font-size: 0.9rem;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+.sp-btn-link:hover { color: #aeb4ff; }
+
+/* --- SECTIONS --- */
+.sp-section-header {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sp-section-header h2 { font-size: 1.5rem; font-weight: 500; color: white; }
+
+/* --- TECH PILLS --- */
+.sp-tech-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.sp-pill {
+  padding: 8px 20px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--sp-border);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: var(--sp-text-secondary);
+  transition: 0.3s;
+}
+.sp-pill:hover { border-color: #fff; color: #fff; background: rgba(255,255,255,0.08); }
+
+/* --- CONTACT --- */
+.sp-contact-area {
+  text-align: center;
+  margin-top: 6rem;
+  padding: 4rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, transparent 100%);
+  border-radius: 12px;
+  border-top: 1px solid var(--sp-border);
+}
+
+@media (max-width: 768px) {
+  .sp-title { font-size: 2.5rem; }
+}
