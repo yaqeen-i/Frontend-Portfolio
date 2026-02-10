@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/terminal.css';
+import '../styles/Terminal.css';
 
 const Terminal = () => {
   const [history, setHistory] = useState([]);

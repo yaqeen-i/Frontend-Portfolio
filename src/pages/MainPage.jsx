@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/mainPage.css'; // Make sure to create this CSS file based on the design
+import '../styles/MainPage.css';
 
 const MainPage = () => {
   return (

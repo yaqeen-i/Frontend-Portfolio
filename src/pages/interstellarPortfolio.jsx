@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import * as THREE from 'three';
-import '../styles/interstellarPortfolio.css'; 
+import '../styles/InterstellarPortfolio.css'; 
 
 const InterstellarPortfolio = () => {
   const mountRef = useRef(null);
