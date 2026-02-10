@@ -1,22 +1,22 @@
-/* src/MainPage.css */
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap');
 
 .main-hub {
-  height: 100vh;
+  min-height: 100vh; 
   width: 100vw;
-  /* Light background (Off-white/Light Gray) */
   background-color: #f0f2f5; 
-  color: #1a1a1a; /* Dark text */
+  color: #1a1a1a; 
   font-family: 'Rajdhani', sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow-x: hidden; 
   position: relative;
+  padding: 2rem 1rem; 
+  box-sizing: border-box; 
 }
 
-/* Background Grid - Updated to be visible on white */
+/* Background Grid */
 .hub-grid {
   position: absolute;
   width: 200%;
@@ -39,6 +39,8 @@
 .hub-content {
   z-index: 1;
   text-align: center;
+  width: 100%; 
+  max-width: 1200px;
 }
 
 .hub-title {
@@ -46,8 +48,7 @@
   margin-bottom: 3rem;
   text-transform: uppercase;
   letter-spacing: 5px;
-  color: #111; /* Dark Title */
-  /* Subtle dark shadow instead of white glow */
+  color: #111; 
   text-shadow: 2px 2px 0px rgba(0,0,0,0.1); 
 }
 
@@ -56,14 +57,14 @@
   gap: 2rem;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }
 
-/* Card Styles - White Glassmorphism */
 .mode-card {
   width: 280px;
   height: 350px;
-  background: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
-  border: 1px solid rgba(0, 0, 0, 0.05); /* Faint dark border */
+  background: rgba(255, 255, 255, 0.6); 
+  border: 1px solid rgba(0, 0, 0, 0.05); 
   border-radius: 12px;
   padding: 2rem;
   display: flex;
@@ -74,7 +75,7 @@
   cursor: pointer;
   text-decoration: none;
   backdrop-filter: blur(10px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Soft shadow */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
 }
 
 .mode-card:hover {
@@ -83,7 +84,6 @@
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
-/* Specific Card Hover Borders */
 .mode-card.terminal:hover { border-color: #00bf33; }
 .mode-card.interstellar:hover { border-color: #00bcd4; }
 .mode-card.spotlight:hover { border-color: #5e6ad2; }
@@ -91,26 +91,70 @@
 .icon {
   font-size: 3rem;
   margin-bottom: 1.5rem;
-  color: #888; /* Gray icons by default */
+  color: #888; 
   transition: 0.3s;
 }
 
-/* Hover Colors for Icons */
-.mode-card.terminal:hover .icon { color: #00bf33; } /* Darker green */
-.mode-card.interstellar:hover .icon { color: #00bcd4; } /* Cyan */
-.mode-card.spotlight:hover .icon { color: #5e6ad2; } /* Purple */
+.mode-card.terminal:hover .icon { color: #00bf33; } 
+.mode-card.interstellar:hover .icon { color: #00bcd4; } 
+.mode-card.spotlight:hover .icon { color: #5e6ad2; } 
 
 .mode-name {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #222; /* Dark text */
+  color: #222; 
   margin-bottom: 1rem;
   text-transform: uppercase;
 }
 
 .mode-desc {
   font-size: 0.95rem;
-  color: #666; /* Dark gray text */
+  color: #666; 
   text-align: center;
   line-height: 1.5;
+}
+
+
+
+@media (max-width: 768px) {
+  .main-hub {
+    height: auto;
+    padding: 4rem 1.5rem; 
+  }
+
+  .hub-title {
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+    letter-spacing: 3px;
+  }
+
+  .mode-selection {
+    flex-direction: column; 
+    gap: 1.5rem; 
+    width: 100%;
+  }
+
+  .mode-card {
+    width: 100%; 
+    max-width: 340px; 
+    height: auto;
+    min-height: 280px; 
+    padding: 1.5rem;
+  }
+
+  .icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hub-title {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+  
+  .mode-card {
+    min-height: 250px;
+  }
 }
