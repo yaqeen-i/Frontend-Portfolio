@@ -31,7 +31,7 @@ const SpotlightPortfolio = () => {
         <header className="sp-header">
           <div className="sp-badge">FrontEnd Developer</div>
           <h1 className="sp-title">
-            Yaqin Khazaleh
+            Yaqeen Khazaleh
           </h1>
           <p className="sp-subtitle">
             A software engineer with expertise in FrontEnd development using ReactJS, 
@@ -151,7 +151,7 @@ const SpotlightPortfolio = () => {
           <p style={{color: 'var(--sp-text-secondary)', margin: '1rem 0 2rem 0'}}>
             I'm currently available for new FrontEnd opportunities.
           </p>
-          <a href="mailto:yaqinhamzeh0@gmail.com" className="sp-pill" style={{background: '#fff', color: '#000', border: 'none', fontWeight: 600, padding: '12px 30px', textDecoration: 'none'}}>
+          <a href="mailto:yaqeen.hamza98@gmail.com" className="sp-pill" style={{background: '#fff', color: '#000', border: 'none', fontWeight: 600, padding: '12px 30px', textDecoration: 'none'}}>
             Email Me
           </a>
           <div style={{marginTop: '20px', fontSize: '0.9rem', color: '#888'}}>

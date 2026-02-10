@@ -13,6 +13,10 @@ A modern, multi-style portfolio website showcasing versatile UI/UX capabilities 
    - ASCII art project cards
    - Perfect for developers who appreciate CLI aesthetics
 
+   ![Terminal Mode](./images/Terminal.png)
+   
+
+
 2. ** Interstellar Mode**
    - Interactive 3D experience using Three.js
    - Animated geometric sphere with particle system
@@ -20,12 +24,18 @@ A modern, multi-style portfolio website showcasing versatile UI/UX capabilities 
    - Breathing animation effects
    - Futuristic sci-fi design
 
+   ![Interstellar Mode](./images/Interstellar.png)
+
+
 3. **★ Spotlight Mode**
    - Clean, modern professional design
    - Glassmorphism card effects
    - Interactive spotlight hover states
    - Comprehensive project showcase
    - Traditional portfolio layout
+
+   ![Spotlight Mode](./images/Spotlight.png)
+   
 
 ##  Tech Stack
 
