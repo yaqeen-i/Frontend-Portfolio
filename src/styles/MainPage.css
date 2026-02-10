@@ -118,17 +118,13 @@
 
 @media (max-width: 768px) {
   .main-hub {
-    height: auto;
-    padding: 4rem 1.5rem; 
-    overflow-y: auto;
+    height: auto; 
+    min-height: 100vh;
+    padding: 4rem 1.5rem;
+    overflow-y: visible; 
     overflow-x: hidden;
   }
-
-  .hub-title {
-    font-size: 2.2rem;
-    margin-bottom: 2.5rem;
-    letter-spacing: 3px;
-  }
+}
 
   .mode-selection {
     flex-direction: column; 
