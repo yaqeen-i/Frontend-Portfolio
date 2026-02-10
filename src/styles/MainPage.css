@@ -120,6 +120,8 @@
   .main-hub {
     height: auto;
     padding: 4rem 1.5rem; 
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
   .hub-title {
