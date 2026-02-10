@@ -74,5 +74,6 @@ button:focus-visible {
 
 body {
   background-color: #000;
-  overflow: hidden; /* Prevents double scrollbars */
+  overflow-x: hidden; /* Prevents double scrollbars */
+  overflow-y: auto;
 }
